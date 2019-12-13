@@ -27,4 +27,5 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 - Crie diretório onde exemplos serão depositados
   - `mkdir -p $GOPATH/src/github.com/hyperledger/`
   - `cd $GOPATH/src/github.com/hyperledger/`
+  - `git clone https://github.com/hyperledger/fabric-samples.git`
   
