@@ -20,4 +20,8 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
   - `. ~/.nvm/nvm.sh`
   - `nvm install node`
+- Defina GOPATH (independente da linguagem que está empregando)
+  - `vi ~/.bash_profile`
+  - Acrescente `export GOPATH=$HOME/go`
+  - Crie o diretório indicado pela variável `GOPATH`
   
