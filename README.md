@@ -24,4 +24,7 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `vi ~/.bash_profile`
   - Acrescente `export GOPATH=$HOME/go`
   - Crie o diretório indicado pela variável `GOPATH`
+- Crie diretório onde exemplos serão depositados
+  - `mkdir -p $GOPATH/src/github.com/hyperledger/`
+  - `cd $GOPATH/src/github.com/hyperledger/`
   
