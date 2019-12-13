@@ -12,6 +12,7 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 - sudo yum update -y
 - `sudo amazon-linux-extras install docker`
 - `sudo service docker start`
+- `sudo usermod -a -G docker ec2-user` para executar o docker sem necessidade de sudo.
 - `sudo yum install git`
 - Docker composer
   - ```sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null```
@@ -30,3 +31,4 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `cd $GOPATH/src/github.com/hyperledger/`
   - `git clone https://github.com/hyperledger/fabric-samples.git`
   
+# Network
