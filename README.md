@@ -11,4 +11,7 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 - Criada instância para experimentação.
 - sudo yum update -y
 - sudo amazon-linux-extras install docker
+- `sudo yum install git`
+- Docker composer
+  - ```sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null```
 
