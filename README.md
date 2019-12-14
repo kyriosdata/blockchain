@@ -7,7 +7,7 @@ Quando uma prova é submetida por um estudante, o professor em questão é respo
 O professor deve responder cada questionamento (feito por questão). O estudante terá 2 dias para, caso não satisfeito com a resposta do docente, reiterar sua posição. Neste caso, contudo, agora outra instância da universidade será responsável pela resposta ao questionamento do estudante. Independente do resultado apresentado pelo segundo revisor, a coordenação de curso deve ratificar a resposta do segundo revisor ou fornecer encaminhamento distinto e definitivo. 
 
 # Iniciando por...
-- https://hyperledger-fabric.readthedocs.io/en/latest/tutorial/commercial_paper.html#prerequisites
+- https://hyperledger-fabric.readthedocs.io/en/release-1.4/write_first_app.html
 
 # AWS (passos)
 
@@ -42,4 +42,9 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `cd $GOPATH/src/github.com/hyperledger/`
   - `git clone https://github.com/hyperledger/fabric-samples.git`
   
-# Network
+# Outros (notas)
+- Foi necessário instalar make e g++
+- npm install --global grpc
+- npm rebuild
+- GOPATH deve indicar diretório contendo o código de teste 
+- PATH deve incluir GOPATH/bin (em GOPATH/bin deve existir configtxlator e outros).
