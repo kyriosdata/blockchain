@@ -9,7 +9,7 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 # Iniciando por...
 - https://hyperledger-fabric.readthedocs.io/en/release-1.4/write_first_app.html
 
-# AWS (passos)
+# Preparando o ambiente
 
 - Amazon AMI (install Docker)
   - `sudo yum update -y`
@@ -50,3 +50,8 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 - npm rebuild
 - GOPATH deve indicar diretório contendo o código de teste 
 - PATH deve incluir GOPATH/bin (em GOPATH/bin deve existir configtxlator e outros).
+
+# Criando a primeira rede
+
+- Veja em https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html
+- `.byfn.sh generate`
