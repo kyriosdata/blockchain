@@ -69,4 +69,5 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 Veja detalhes em https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html
 
 - `cd fabric-samples/first-network` (onde **fabric-samples**) foi gerado pela instalação dos binários, passo acima.
-- `.byfn.sh generate`
+- `./byfn.sh generate`
+- `./byfn.sh up` (Go), `./byfn.sh up -l java` (Java) ou `./byfn.sh up -l javascript` (JavaScript)
