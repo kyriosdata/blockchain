@@ -67,4 +67,6 @@ Veja detalhes em https://hyperledger-fabric.readthedocs.io/en/latest/write_first
 - `./byfn.sh down`
 - `./byfn.sh generate` (exigido se nova linguagem é escolhida)
 - `cd fabric-samples/fabcar`
-- `./startFabric.sh java` (em vez de Java também poderia ser Javascript ou simplesmente vazio para 'Go').
+- `./startFabric.sh` (após este comando a rede estará montada e poderá ser exercidade).
+- `cd java` (para exercitar código escrito em Java)
+- `mvn test`
