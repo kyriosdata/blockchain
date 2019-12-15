@@ -80,5 +80,8 @@ O link fornecido acima fornece detalhes acerca de como criar sua própria rede, 
 
 Veja detalhes em https://hyperledger-fabric.readthedocs.io/en/latest/write_first_app.html.
 
+- `cd fabric-samples/first-network`
+- `./byfn.sh down`
+- `./byfn.sh generate` (exigido se nova linguagem é escolhida)
 - `cd fabric-samples/fabcar`
 - `./startFabric.sh java` (em vez de Java também poderia ser Javascript ou simplesmente vazio para 'Go').
