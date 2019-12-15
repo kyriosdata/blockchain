@@ -35,29 +35,12 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `` sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null ``
   - `sudo chmod +x /usr/local/bin/docker-compose`
   - `sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose`
-- Nodejs
+- Nodejs (e npm)
   - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
   - `. ~/.nvm/nvm.sh`
   - `nvm install node`
-- Defina GOPATH (independente da linguagem que está empregando)
-  - `vi ~/.bash_profile`
-  - Acrescente `export GOPATH=$HOME/go`
-  - Crie o diretório indicado pela variável `GOPATH`
-- Crie diretório onde exemplos serão depositados
 
-  - `mkdir -p $GOPATH/src/github.com/hyperledger/`
-  - `cd $GOPATH/src/github.com/hyperledger/`
-  - `git clone https://github.com/hyperledger/fabric-samples.git`
-
-# Outros (notas)
-
-- Foi necessário instalar make e g++
-- npm install --global grpc
-- npm rebuild
-- GOPATH deve indicar diretório contendo o código de teste
-- PATH deve incluir GOPATH/bin (em GOPATH/bin deve existir configtxlator e outros).
-
-# Instalar binários
+# Instalar binários e atualizar GOPATH e PATH
 
 - `curl -sSL https://bit.ly/2ysbOFE | bash -s`
 - O comando acima cria o diretório **fabric-samples** no diretório em que é executado. Este deve ser
