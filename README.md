@@ -75,3 +75,10 @@ Veja detalhes em https://hyperledger-fabric.readthedocs.io/en/latest/build_netwo
 O link fornecido acima fornece detalhes acerca de como criar sua própria rede, motivo pelo qual **first-network** é relevante. Por ora, você pode simplesmente "desmontar" a rede criada.
 
 - `./byfn.sh down`
+
+# Escrevendo a primeira aplicação
+
+Veja detalhes em https://hyperledger-fabric.readthedocs.io/en/latest/write_first_app.html.
+
+- `cd fabric-samples/fabcar`
+- `./startFabric.sh java` (em vez de Java também poderia ser Javascript ou simplesmente vazio para 'Go').
