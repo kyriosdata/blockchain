@@ -54,6 +54,9 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 # Instalar binários
 
 - `curl -sSL https://bit.ly/2ysbOFE | bash -s`
+- O comando acima cria o diretório **fabric-samples** no diretório em que é executado. Este deve ser
+o diretório configurado na variável **$GOPATH**. 
+- Acrescentar ao PATH, `export PATH=$PATH:$GOPATH/bin`, onde o diretório **bin** foi gerado pelo comando acima, assim como o diretório **fabric-samples**.
 
 # Criando a primeira rede
 
