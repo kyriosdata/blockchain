@@ -15,7 +15,6 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `sudo yum update -y`
   - `sudo amazon-linux-extras install docker`
   - `sudo service docker start`
-  - `sudo usermod -a -G docker ec2-user` para executar o docker sem necessidade de sudo.
   
 - Ubuntu (install Docker)
   - `sudo apt-get update`
@@ -23,6 +22,9 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `sudo apt install docker.io`
   - `sudo systemctl start docker`
   - `sudo systemctl enable docker`
+  
+- Executar Docker (sem necessidade de sudo)
+  - `sudo usermod -a -G docker ec2-user` para executar o docker sem necessidade de sudo.
 
 - `sudo yum install git`
 - Docker composer
