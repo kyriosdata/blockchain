@@ -51,6 +51,10 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 - GOPATH deve indicar diretório contendo o código de teste 
 - PATH deve incluir GOPATH/bin (em GOPATH/bin deve existir configtxlator e outros).
 
+# Instalar binários
+
+- `curl -sSL https://bit.ly/2ysbOFE | bash -s`
+
 # Criando a primeira rede
 
 - Veja em https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html
