@@ -78,10 +78,9 @@ Por ora, você pode simplesmente "desmontar" a rede criada.
 
 Veja detalhes em https://hyperledger-fabric.readthedocs.io/en/latest/write_first_app.html.
 
-- `cd fabric-samples/first-network`
-- `./byfn.sh down`
-- `./byfn.sh generate` (exigido se nova linguagem é escolhida)
+- `cd fabric-samples/chaincode/fabcar/java`
+- `./gradlew build`
 - `cd fabric-samples/fabcar`
-- `./startFabric.sh` (após este comando a rede estará montada e poderá ser exercidade).
+- `./startFabric.sh java` (após este comando a rede estará montada e poderá ser exercidade).
 - `cd java` (para exercitar código escrito em Java)
 - `mvn test`
