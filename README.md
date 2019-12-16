@@ -47,6 +47,9 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `sudo apt install openjdk-8-jdk-headless`
   - `sudo apt install maven`
   
+- Go
+  - `sudo apt install golang-go`
+  
 - Executar Docker (sem necessidade de sudo)
 
   - `sudo usermod -a -G docker ec2-user` para executar o docker sem necessidade de sudo. Isto terá efeito em toda nova _shell_ que for aberta.
