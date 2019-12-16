@@ -46,6 +46,10 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
   - `. ~/.nvm/nvm.sh`
   - `nvm install node`
+  
+- Java e Maven
+  - `sudo apt install maven`
+  - `sudo apt install default-jdk`
 
 # Instalar binários
 
