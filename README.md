@@ -64,13 +64,13 @@ O diretório criado pela instalação dos binários (passo acima) deve ser o dir
 
 # Criando a primeira rede
 
-Veja detalhes em https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html
+Este link (https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html) fornece detalhes acerca de como criar sua própria rede, motivo pelo qual **first-network** é relevante. 
 
 - `cd fabric-samples/first-network` (onde **fabric-samples**) foi gerado pela instalação dos binários, passo acima.
 - `./byfn.sh generate`
 - `./byfn.sh up` (Go), `./byfn.sh up -l java` (Java) ou `./byfn.sh up -l javascript` (JavaScript)
 
-O link fornecido acima fornece detalhes acerca de como criar sua própria rede, motivo pelo qual **first-network** é relevante. Por ora, você pode simplesmente "desmontar" a rede criada.
+Por ora, você pode simplesmente "desmontar" a rede criada.
 
 - `./byfn.sh down`
 
