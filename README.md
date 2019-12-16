@@ -10,7 +10,7 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 
 - https://hyperledger-fabric.readthedocs.io/en/release-1.4/write_first_app.html
 
-# Preparando o ambiente
+# 1. Preparando o ambiente
 
 - Amazon AMI (install Docker)
 
@@ -25,10 +25,6 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `sudo apt install docker.io`
   - `sudo systemctl start docker`
   - `sudo systemctl enable docker`
-
-- Executar Docker (sem necessidade de sudo)
-
-  - `sudo usermod -a -G docker ec2-user` para executar o docker sem necessidade de sudo.
   
 - Ubuntu (install docker-compose)
   - `sudo apt install docker-compose` 
@@ -48,10 +44,14 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `nvm install node`
   
 - Java e Maven
-  - `sudo apt install default-jdk`
+  - `sudo apt install openjdk-8-jdk`
   - `sudo apt install maven`
+  
+- Executar Docker (sem necessidade de sudo)
 
-# Instalar binários
+  - `sudo usermod -a -G docker ec2-user` para executar o docker sem necessidade de sudo. Isto terá efeito em toda nova _shell_ que for aberta.
+
+# 2. Instalar binários
 
 - `curl -sSL https://bit.ly/2ysbOFE | bash -s`
 - O comando acima cria o diretório **fabric-samples** no diretório em que é executado. 
@@ -62,7 +62,9 @@ O diretório criado pela instalação dos binários (passo acima) deve ser o dir
 - `export GOPATH=dir-instalcao-binarios/fabric-samples`
 - `export PATH=$PATH:$GOPATH/bin`, onde o diretório **bin** foi gerado pelo comando acima, assim como o diretório **fabric-samples**.
 
-# Criando a primeira rede
+Os comandos acima terão efeito em toda nova _shell_ que for aberta.
+
+# 3. Criando a primeira rede
 
 Este link (https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html) fornece detalhes acerca de como criar sua própria rede, motivo pelo qual **first-network** é relevante. 
 
