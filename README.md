@@ -44,7 +44,7 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `nvm install node`
   
 - Java e Maven
-  - `sudo apt install openjdk-8-jdk`
+  - `sudo apt install openjdk-8-jdk-headless`
   - `sudo apt install maven`
   
 - Executar Docker (sem necessidade de sudo)
