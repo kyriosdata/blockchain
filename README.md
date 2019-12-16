@@ -57,9 +57,9 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 - O comando acima cria o diretório **fabric-samples** no diretório em que é executado. 
 
 # Configurar variáveis de ambiente (GOPATH e PATH)
-O diretório criado pela instalação dos binários (passo acima) deve ser o diretório configurado na variável **\$GOPATH**. Adicionalmente, no diretório definido em **GOPATH** encontra-se o diretório **bin**, que deve fazer parte da variável **PATH**.
+O diretório criado pela instalação dos binários (passo acima) deve ser o diretório configurado na variável **GOPATH**. Adicionalmente, no diretório definido em **GOPATH** encontra-se o diretório **bin**, que deve fazer parte da variável **PATH**.
 
-- `export GOPATH=dir-instalcao-binarios/fabric-samples**`
+- `export GOPATH=dir-instalcao-binarios/fabric-samples`
 - `export PATH=$PATH:$GOPATH/bin`, onde o diretório **bin** foi gerado pelo comando acima, assim como o diretório **fabric-samples**.
 
 # Criando a primeira rede
