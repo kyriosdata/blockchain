@@ -48,8 +48,8 @@ O professor deve responder cada questionamento (feito por questão). O estudante
   - `nvm install node`
   
 - Java e Maven
-  - `sudo apt install maven`
   - `sudo apt install default-jdk`
+  - `sudo apt install maven`
 
 # Instalar binários
 
