@@ -19,14 +19,12 @@ O [script](./hyperledger-install.sh) visa criar o ambiente de desenvolvimento ne
 - `curl -sSL https://bit.ly/2ysbOFE | bash -s`
 - O comando acima cria o diretório **fabric-samples** no diretório em que é executado.
 
-# 3. Criando a primeira rede
+# 3. Configuração para a primeira aplicação
 
 Este link (https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html) fornece detalhes acerca de como criar sua própria rede, motivo pelo qual **first-network** é relevante.
 
 - `cd fabric-samples/first-network` (onde **fabric-samples**) foi gerado pela instalação dos binários, passo acima.
 - `./byfn.sh generate`
-- `./byfn.sh up` além das opções `./byfn.sh up -l java` (Java) ou `./byfn.sh up -l javascript` (JavaScript) que, contudo, produzem erro.
-- `./byfn.sh down`
 
 # 4. Escrevendo a primeira aplicação (chaincode in Javascript)
 
