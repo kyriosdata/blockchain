@@ -10,7 +10,7 @@ O professor deve responder cada questionamento (feito por questão). O estudante
 
 # Ambiente de desenvolvimento
 
-O script (hyperledger-install.sh) visa criar o ambiente de desenvolvimento necessário para o desenvolvimento do estudo de caso. Este script atende os pré-requisitos (https://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html) esperados e foi testado no Ubuntu 18.04.
+O script [./hyperledger-install.sh] visa criar o ambiente de desenvolvimento necessário para o desenvolvimento do estudo de caso. Este script atende os pré-requisitos (https://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html) esperados e foi testado no Ubuntu 18.04.
 
 - https://hyperledger-fabric.readthedocs.io/en/release-1.4/write_first_app.html
 
