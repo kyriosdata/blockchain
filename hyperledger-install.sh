@@ -19,6 +19,10 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 . ~/.nvm/nvm.sh
 nvm install 10.15.3
 
+# Make
+- `sudo apt -y install make`
+- `sudo apt -y install g++`
+
 # JAVA E MAVEN
 
 sudo apt -y install openjdk-8-jdk-headless
