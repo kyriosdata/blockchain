@@ -73,19 +73,14 @@ Este link (https://hyperledger-fabric.readthedocs.io/en/latest/build_network.htm
 
 - `cd fabric-samples/first-network` (onde **fabric-samples**) foi gerado pela instalação dos binários, passo acima.
 - `./byfn.sh generate`
-- `./byfn.sh up` (Go), `./byfn.sh up -l java` (Java) ou `./byfn.sh up -l javascript` (JavaScript)
-
-Por ora, você pode simplesmente "desmontar" a rede criada.
-
+- `./byfn.sh up` além das opções `./byfn.sh up -l java` (Java) ou `./byfn.sh up -l javascript` (JavaScript) que, contudo, produzem erro.
 - `./byfn.sh down`
 
-# Escrevendo a primeira aplicação
+# 4. Escrevendo a primeira aplicação (chaincode in Javascript)
 
 Veja detalhes em https://hyperledger-fabric.readthedocs.io/en/latest/write_first_app.html.
 
-- `cd fabric-samples/chaincode/fabcar/java`
-- `./gradlew build`
 - `cd fabric-samples/fabcar`
-- `./startFabric.sh java` (após este comando a rede estará montada e poderá ser exercidade).
+- `./startFabric.sh javascript` (após este comando a rede estará montada e poderá ser exercidade).
 - `cd java` (para exercitar código escrito em Java)
 - `mvn test`
