@@ -35,6 +35,7 @@ sudo apt -y install maven
 curl -O https://storage.googleapis.com/golang/go1.12.9.linux-amd64.tar.gz
 tar -xvf go1.12.9.linux-amd64.tar.gz
 sudo chown -R root:root ./go
+sudo rm -fr /usr/local/go
 sudo mv go /usr/local
 rm -f go1.12.9.linux-amd64.tar.gz
 
