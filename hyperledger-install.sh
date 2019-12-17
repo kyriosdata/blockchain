@@ -19,9 +19,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 . ~/.nvm/nvm.sh
 nvm install 10.15.3
 
-# Make
+# Make e g++
 - `sudo apt -y install make`
 - `sudo apt -y install g++`
+
+# Requisitado em alguns cenários
+- `npm rebuild`
 
 # JAVA E MAVEN
 
