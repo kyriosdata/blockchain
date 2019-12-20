@@ -14,9 +14,10 @@ O [script](./hyperledger-install.sh) visa criar o ambiente de desenvolvimento ne
 
 ## 1. Pré-requisitos
 
-- Log no Ubuntu 18
+- Em uma _shell_ no Ubuntu 18
 - `git clone https://github.com/kyriosdata/blockchain`
-- `blockchain/hyperledger-install.sh`
+- `blockchain/hyperledger-install.sh` ou apenas execute o comando abaixo
+- `curl https://raw.githubusercontent.com/kyriosdata/blockchain/master/hyperledger-install.sh | bash` 
 
 # 2. Instalar binários
 
