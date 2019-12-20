@@ -24,7 +24,8 @@ public class ClientApp {
 		Wallet wallet = Wallet.createFileSystemWallet(walletPath);
 
 		// load a CCP
-		Path networkConfigPath = Paths.get("..", "..", "first-network", "connection-org1.yaml");
+		Path networkConfigPath = Paths.get(".", "connection-org1.yaml");
+		System.out.println(networkConfigPath.toFile().exists());
 
 		Gateway.Builder builder = Gateway.createBuilder();
 		builder.identity(wallet, "user1").networkConfig(networkConfigPath).discovery(true);
