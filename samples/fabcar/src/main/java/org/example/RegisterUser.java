@@ -1,9 +1,7 @@
-/*
-SPDX-License-Identifier: Apache-2.0
-*/
-
 package org.example;
 
+import java.lang.reflect.InvocationTargetException;
+import java.net.MalformedURLException;
 import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.util.Properties;
@@ -13,6 +11,8 @@ import org.hyperledger.fabric.gateway.Wallet;
 import org.hyperledger.fabric.gateway.Wallet.Identity;
 import org.hyperledger.fabric.sdk.Enrollment;
 import org.hyperledger.fabric.sdk.User;
+import org.hyperledger.fabric.sdk.exception.CryptoException;
+import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
 import org.hyperledger.fabric.sdk.security.CryptoSuite;
 import org.hyperledger.fabric.sdk.security.CryptoSuiteFactory;
 import org.hyperledger.fabric_ca.sdk.HFCAClient;
@@ -20,22 +20,17 @@ import org.hyperledger.fabric_ca.sdk.RegistrationRequest;
 
 public class RegisterUser {
 
-	private static final String URL = "https://3.231.207.0:7054";
-	private static final String USER = "davi";
+	public static final String IP = "3.231.207.0";
+	private static final String URL = String.format("https://%s:7054", IP);
+	public static final String CERTIFICADO = "ca.org1.example.com-cert.pem";
+	private static final String USER = "vitoria";
 
 	static {
 		System.setProperty("org.hyperledger.fabric.sdk.service_discovery.as_localhost", "true");
 	}
 
 	public static void main(String[] args) throws Exception {
-
-		// Create a CA client for interacting with the CA.
-		Properties props = new Properties();
-		props.put("pemFile","./ca.org1.example.com-cert.pem");
-		props.put("allowAllHostNames", "true");
-		HFCAClient caClient = HFCAClient.createNewInstance(URL, props);
-		CryptoSuite cryptoSuite = CryptoSuiteFactory.getDefault().getCryptoSuite();
-		caClient.setCryptoSuite(cryptoSuite);
+		HFCAClient caClient = getHfcaClient(CERTIFICADO, URL);
 
 		// Create a wallet for managing identities
 		Wallet wallet = Wallet.createFileSystemWallet(Paths.get("wallet"));
@@ -111,6 +106,20 @@ public class RegisterUser {
 		wallet.put(USER, user);
 		System.out.printf("Successfully enrolled user \"%s\" and " +
 				"imported it into the wallet", USER);
+	}
+
+	private static HFCAClient getHfcaClient(
+			final String certificadoFile,
+			final String url) throws MalformedURLException, CryptoException,
+			InvalidArgumentException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+		// Create a CA client for interacting with the CA.
+		Properties props = new Properties();
+		props.put("pemFile", certificadoFile);
+		props.put("allowAllHostNames", "true");
+		HFCAClient caClient = HFCAClient.createNewInstance(url, props);
+		CryptoSuite cryptoSuite = CryptoSuiteFactory.getDefault().getCryptoSuite();
+		caClient.setCryptoSuite(cryptoSuite);
+		return caClient;
 	}
 
 }
