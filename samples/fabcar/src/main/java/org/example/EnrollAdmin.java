@@ -22,19 +22,18 @@ public class EnrollAdmin {
 	public static final String IP = "3.231.207.0";
 	public static final String ADMIN = "admin";
 
+	private static final String URL = String.format("https://%s:7054", IP);
+	public static final String CERTIFICADO = "ca.org1.example.com-cert.pem";
+	private static final String USER = "vitoria";
+
 	static {
 		System.setProperty("org.hyperledger.fabric.sdk.service_discovery.as_localhost", "true");
 	}
 
 	public static void main(String[] args) throws Exception {
 
-		// Create a CA client for interacting with the CA.
-		Properties props = new Properties();
-		props.put("pemFile", "./ca.org1.example.com-cert.pem");
-		props.put("allowAllHostNames", "true");
-		HFCAClient caClient = HFCAClient.createNewInstance("https://3.231.207.0:7054", props);
-		CryptoSuite cryptoSuite = CryptoSuiteFactory.getDefault().getCryptoSuite();
-		caClient.setCryptoSuite(cryptoSuite);
+		HFCAClient caClient =
+				HyperledgerFabricUtils.getHfcaClient(CERTIFICADO, URL);
 
 		// Create a wallet for managing identities
 		Wallet wallet = Wallet.createFileSystemWallet(Paths.get("wallet"));
@@ -55,7 +54,7 @@ public class EnrollAdmin {
 		System.out.println("Successfully enrolled user \"admin\" and imported it into the wallet");
 	}
 
-	private static EnrollmentRequest getEnrollmentRequest() {
+	public static EnrollmentRequest getEnrollmentRequest() {
 		final EnrollmentRequest enrollmentRequestTLS = new EnrollmentRequest();
 		enrollmentRequestTLS.addHost(IP);
 		enrollmentRequestTLS.setProfile("tls");

@@ -1,20 +1,13 @@
 package org.example;
 
-import java.lang.reflect.InvocationTargetException;
-import java.net.MalformedURLException;
 import java.nio.file.Paths;
 import java.security.PrivateKey;
-import java.util.Properties;
 import java.util.Set;
 
 import org.hyperledger.fabric.gateway.Wallet;
 import org.hyperledger.fabric.gateway.Wallet.Identity;
 import org.hyperledger.fabric.sdk.Enrollment;
 import org.hyperledger.fabric.sdk.User;
-import org.hyperledger.fabric.sdk.exception.CryptoException;
-import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
-import org.hyperledger.fabric.sdk.security.CryptoSuite;
-import org.hyperledger.fabric.sdk.security.CryptoSuiteFactory;
 import org.hyperledger.fabric_ca.sdk.HFCAClient;
 import org.hyperledger.fabric_ca.sdk.RegistrationRequest;
 
@@ -30,7 +23,8 @@ public class RegisterUser {
 	}
 
 	public static void main(String[] args) throws Exception {
-		HFCAClient caClient = getHfcaClient(CERTIFICADO, URL);
+		HFCAClient caClient = HyperledgerFabricUtils.getHfcaClient(CERTIFICADO
+				, URL);
 
 		// Create a wallet for managing identities
 		Wallet wallet = Wallet.createFileSystemWallet(Paths.get("wallet"));
@@ -105,20 +99,6 @@ public class RegisterUser {
 		wallet.put(USER, user);
 		System.out.printf("Successfully enrolled user \"%s\" and " +
 				"imported it into the wallet", USER);
-	}
-
-	private static HFCAClient getHfcaClient(
-			final String certificadoFile,
-			final String url) throws MalformedURLException, CryptoException,
-			InvalidArgumentException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-		// Create a CA client for interacting with the CA.
-		Properties props = new Properties();
-		props.put("pemFile", certificadoFile);
-		props.put("allowAllHostNames", "true");
-		HFCAClient caClient = HFCAClient.createNewInstance(url, props);
-		CryptoSuite cryptoSuite = CryptoSuiteFactory.getDefault().getCryptoSuite();
-		caClient.setCryptoSuite(cryptoSuite);
-		return caClient;
 	}
 
 }
