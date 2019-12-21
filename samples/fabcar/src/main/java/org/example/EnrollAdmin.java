@@ -15,6 +15,8 @@ import org.hyperledger.fabric.sdk.security.CryptoSuiteFactory;
 import org.hyperledger.fabric_ca.sdk.EnrollmentRequest;
 import org.hyperledger.fabric_ca.sdk.HFCAClient;
 
+// TODO certificado copiado do ambiente onde foi gerado
+// TODO ips foram atualizados com a versão correta (ambiente de teste)
 public class EnrollAdmin {
 
 	static {
@@ -27,7 +29,7 @@ public class EnrollAdmin {
 		Properties props = new Properties();
 		props.put("pemFile", "./ca.org1.example.com-cert.pem");
 		props.put("allowAllHostNames", "true");
-		HFCAClient caClient = HFCAClient.createNewInstance("https://3.231.204.166:7054", props);
+		HFCAClient caClient = HFCAClient.createNewInstance("https://3.231.207.0:7054", props);
 		CryptoSuite cryptoSuite = CryptoSuiteFactory.getDefault().getCryptoSuite();
 		caClient.setCryptoSuite(cryptoSuite);
 
@@ -43,7 +45,7 @@ public class EnrollAdmin {
 
         // Enroll the admin user, and import the new identity into the wallet.
         final EnrollmentRequest enrollmentRequestTLS = new EnrollmentRequest();
-        enrollmentRequestTLS.addHost("3.231.204.166");
+        enrollmentRequestTLS.addHost("3.231.207.0");
         enrollmentRequestTLS.setProfile("tls");
         Enrollment enrollment = caClient.enroll("admin", "adminpw", enrollmentRequestTLS);
         Identity user = Identity.createIdentity("Org1MSP", enrollment.getCert(), enrollment.getKey());
