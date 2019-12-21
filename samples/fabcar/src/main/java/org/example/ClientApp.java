@@ -28,6 +28,11 @@ public class ClientApp {
 		Path walletPath = Paths.get("wallet");
 		Wallet wallet = Wallet.createFileSystemWallet(walletPath);
 
+		if (wallet.get(USER) == null) {
+			System.out.printf("\"%s\" not registered", USER);
+			return;
+		}
+
 		// load a CCP
 		Path networkConfigPath = Paths.get(".", CONNECTION);
 		System.out.println(networkConfigPath.toFile().exists());

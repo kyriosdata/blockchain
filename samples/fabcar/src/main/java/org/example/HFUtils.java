@@ -10,11 +10,16 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.util.Properties;
 
-public class HyperledgerFabricUtils {
+/**
+ * Hyperledger Fabric Utils are useful methods for interacting with
+ * hyperledger fabric network.
+ */
+public class HFUtils {
     public static HFCAClient getHfcaClient(
             final String certificadoFile,
             final String url) throws MalformedURLException, CryptoException,
             InvalidArgumentException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+
         // Create a CA client for interacting with the CA.
         Properties props = new Properties();
         props.put("pemFile", certificadoFile);
