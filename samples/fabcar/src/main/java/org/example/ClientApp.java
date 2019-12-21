@@ -14,6 +14,11 @@ import org.hyperledger.fabric.gateway.Wallet;
 
 public class ClientApp {
 
+	public static final String CONNECTION = "connection-org1.yaml";
+	public static final String USER = "user1";
+	public static final String CHANNEL = "mychannel";
+	public static final String CONTRACT = "fabcar";
+
 	static {
 		System.setProperty("org.hyperledger.fabric.sdk.service_discovery.as_localhost", "true");
 	}
@@ -24,18 +29,18 @@ public class ClientApp {
 		Wallet wallet = Wallet.createFileSystemWallet(walletPath);
 
 		// load a CCP
-		Path networkConfigPath = Paths.get(".", "connection-org1.yaml");
+		Path networkConfigPath = Paths.get(".", CONNECTION);
 		System.out.println(networkConfigPath.toFile().exists());
 
 		Gateway.Builder builder = Gateway.createBuilder();
-		builder.identity(wallet, "user1").networkConfig(networkConfigPath).discovery(true);
+		builder.identity(wallet, USER).networkConfig(networkConfigPath).discovery(true);
 
 		// create a gateway connection
 		try (Gateway gateway = builder.connect()) {
 
 			// get the network and contract
-			Network network = gateway.getNetwork("mychannel");
-			Contract contract = network.getContract("fabcar");
+			Network network = gateway.getNetwork(CHANNEL);
+			Contract contract = network.getContract(CONTRACT);
 
 			byte[] result;
 
