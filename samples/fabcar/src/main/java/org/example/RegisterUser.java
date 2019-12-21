@@ -96,11 +96,10 @@ public class RegisterUser {
 		};
 
 		// Register the user, enroll the user, and import the new identity into the wallet.
-		RegistrationRequest registrationRequest = new RegistrationRequest(
-				USER);
-		registrationRequest.setAffiliation("org1.department1");
-		registrationRequest.setEnrollmentID(USER);
-		String enrollmentSecret = caClient.register(registrationRequest, admin);
+		RegistrationRequest registration = new RegistrationRequest(USER);
+		registration.setAffiliation("org1.department1");
+		registration.setEnrollmentID(USER);
+		String enrollmentSecret = caClient.register(registration, admin);
 		Enrollment enrollment = caClient.enroll(USER, enrollmentSecret);
 		Identity user = Identity.createIdentity("Org1MSP", enrollment.getCert(), enrollment.getKey());
 		wallet.put(USER, user);

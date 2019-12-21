@@ -19,6 +19,9 @@ import org.hyperledger.fabric_ca.sdk.HFCAClient;
 // TODO ips foram atualizados com a versão correta (ambiente de teste)
 public class EnrollAdmin {
 
+	public static final String IP = "3.231.207.0";
+	public static final String ADMIN = "admin";
+
 	static {
 		System.setProperty("org.hyperledger.fabric.sdk.service_discovery.as_localhost", "true");
 	}
@@ -37,19 +40,25 @@ public class EnrollAdmin {
 		Wallet wallet = Wallet.createFileSystemWallet(Paths.get("wallet"));
 
 		// Check to see if we've already enrolled the admin user.
-		boolean adminExists = wallet.exists("admin");
+		boolean adminExists = wallet.exists(ADMIN);
         if (adminExists) {
             System.out.println("An identity for the admin user \"admin\" already exists in the wallet");
             return;
         }
 
         // Enroll the admin user, and import the new identity into the wallet.
-        final EnrollmentRequest enrollmentRequestTLS = new EnrollmentRequest();
-        enrollmentRequestTLS.addHost("3.231.207.0");
-        enrollmentRequestTLS.setProfile("tls");
-        Enrollment enrollment = caClient.enroll("admin", "adminpw", enrollmentRequestTLS);
-        Identity user = Identity.createIdentity("Org1MSP", enrollment.getCert(), enrollment.getKey());
-        wallet.put("admin", user);
+		final EnrollmentRequest request = getEnrollmentRequest();
+		Enrollment enrollment = caClient.enroll(ADMIN, "adminpw", request);
+        Identity user = Identity.createIdentity("Org1MSP",
+				enrollment.getCert(), enrollment.getKey());
+        wallet.put(ADMIN, user);
 		System.out.println("Successfully enrolled user \"admin\" and imported it into the wallet");
+	}
+
+	private static EnrollmentRequest getEnrollmentRequest() {
+		final EnrollmentRequest enrollmentRequestTLS = new EnrollmentRequest();
+		enrollmentRequestTLS.addHost(IP);
+		enrollmentRequestTLS.setProfile("tls");
+		return enrollmentRequestTLS;
 	}
 }
