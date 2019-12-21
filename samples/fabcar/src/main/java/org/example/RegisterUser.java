@@ -16,7 +16,7 @@ public class RegisterUser {
 	public static final String IP = "3.231.207.0";
 	private static final String URL = String.format("https://%s:7054", IP);
 	public static final String CERTIFICADO = "ca.org1.example.com-cert.pem";
-	private static final String USER = "vitoria";
+	private static final String USER = "ufg";
 
 	static {
 		System.setProperty("org.hyperledger.fabric.sdk.service_discovery.as_localhost", "true");
